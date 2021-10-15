@@ -1,0 +1,21 @@
+<!-- Starts up everything needed to run the example listener/talker nodes. -->
+<launch>
+  <!-- Arguments to allow changing common parameters from the command line or when including this file from other launch files. -->
+  <arg name="number" default="10"/>
+  <arg name="message" default="ciao"/>
+  <arg name="max_process_freq" default="20.0"/>
+  <arg name="topic_image_input" default="/camera/image_raw" />
+
+  <!-- The talker node will publish a custom message. -->
+  <node pkg="template_node" type="publisher" name="node_img_example" output="screen">
+    <param name="number" value="$(arg number)" type="int" />
+    <param name="message" value="$(arg message)"/>
+    <param name="max_process_freq" value="$(arg max_process_freq)" type="double" />
+    <param name="topic_image_input" value="$(arg topic_image_input)" type="str" />
+
+  </node>
+
+  <include file="$(find template_node)/launch/tools.launch"/>
+
+
+</launch>
