@@ -38,7 +38,7 @@ Roslaunch is a tool for easily launching multiple ROS nodes locally and remotely
 
 An example of launch file to run the node_exmaple is provide under the launch directory.
 
-## Build the package 
+## Build the package and launch the node
 Create a catkin workspace
 
     mkdir -p ~/catkin_ws/src
@@ -53,3 +53,7 @@ Clone this repository under the src folder
 Build the package
     cd ~/catkin_ws
     catkin_make
+
+Launch the node using roslaunch
+    source ~/catkin_ws/devel/setup.bash
+    roslaunch template_node publisher.launch 
